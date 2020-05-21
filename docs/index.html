@@ -6,7 +6,9 @@
    
 <h3>Setup</h2>
 <ul>
-   <li>Solder pins based on obdII or CAN cable</li>
+   <li>Solder pins based on obdII or CAN cable<br>
+     <img src="images/obdSolderJoints.jpg">
+   </li>
    <li><pre>Modify Overlays 
 sudo nano /boot/config.txt
 Add these 3 lines to the end of file:
@@ -15,7 +17,8 @@ dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=25
 dtoverlay=spi-bcm2835-overlay
     </pre></li>
     <li>Can command .sh files are in can-test_commands directory</li>
-    <li><pre>Unzip and install by
+    <li>Install python library: <br>
+<pre>cd /home/pi/piCan/hardbyte-python-can-library
 sudo python3 setup.py install
 Bring the CAN interface up if it is not already done:
 sudo /sbin/ip link set can0 up type can bitrate 500000
