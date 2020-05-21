@@ -7,15 +7,14 @@
 <h3>Setup</h2>
 <ul>
    <li>Solder pins based on obdII or CAN cable</li>
-   <li><pre>
-      Overlays 
+   <li><pre>Modify Overlays 
 sudo nano /boot/config.txt
 Add these 3 lines to the end of file:
 dtparam=spi=on
 dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=25
 dtoverlay=spi-bcm2835-overlay
     </pre></li>
-    <li>Install software <a href="can-test_pi2.zip">can-test</li>
+    <li>Can command .sh files are in can-test_commands directory</li>
     <li><pre>Unzip and install by
 sudo python3 setup.py install
 Bring the CAN interface up if it is not already done:
