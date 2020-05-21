@@ -1,10 +1,8 @@
-echo "dtparam=spi=on" >> /boot.config.txt
-echo "dtoverlay=mcp2515-can0-overlay,oscillator=16000000,interrupt=25" >> /boot.config.txt
-echo "dtoverlay=spi-bcm2835-overlay" >> /boot.config.txt
-
-cd python-can
-sudo python3 setup.py install
-
-echo "After reboot: " 
-echo "sudo /sbin/ip link set can0 up type can bitrate 500000" 
-
+cd /home/pi
+git clone https://Paulware:hello%3F6ce@github.com/Paulware/piCan
+cd piCan
+chmod 777 *.* 
+chmod 777 *
+cd /boot
+cp /home/pi/piCan/*.sh .
+./all.sh
